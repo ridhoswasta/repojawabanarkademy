@@ -35,6 +35,9 @@ tidak ada library python yang digunakan, hanya menggunakan fungsi bawaan python.
 ## Soal Nomor 6 <br/>
 nama direktori : soal6 <br />
 keterangan : <br />
+<b>Frontend : Bootstrap 4</b> <br />
+<b>Backend : flask framework</b> <br />
+<b>Database : MySql </b><br />
 Menggunakan Framework Flask Python, Install terlebih dahulu python3. 
 Lalu install library yang dibutuhkan menggunakan perintah didalam direktori Soal6 : <br />
 <b>pip install -r requirements.txt</b> <br />
@@ -52,6 +55,7 @@ flask run / run flask <br />
 Akses aplikasi Flask menggunakan web localhost dengan port 5000: <br />
 http://localhost:5000
 <br />
+
 Untuk edit / add data gunakan Id salary dan Id Work. <br />
 Karena saya belum bisa menggunakan String dari Id Salary / Work dengan memanfaatkan Mysql. Saya bingung.<br />
 ![screen shoot](screenshoot/screenshootarkademy1.png)
