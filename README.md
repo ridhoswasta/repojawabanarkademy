@@ -49,6 +49,9 @@ export FLASK_APP=script.py <br />
 jalakan flask dengan perintah berikut : <br />
 flask run / run flask <br />
 
+Akses aplikasi Flask menggunakan web localhost dengan port 5000: <br />
+http://localhost:5000
+<br />
 Untuk edit / add data gunakan Id salary dan Id Work. <br />
 Karena saya belum bisa menggunakan String dari Id Salary / Work dengan memanfaatkan Mysql. Saya bingung.<br />
 ![screen shoot](screenshoot/screenshootarkademy1.png)
