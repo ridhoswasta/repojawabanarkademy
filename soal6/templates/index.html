@@ -1,0 +1,145 @@
+<html>
+<head>
+<title> Project Test Arkademy </title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style type="text/css">
+    body {
+      padding-top: 70px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top shadow-sm">
+
+      <a href="#" class="navbar-brand">
+          <img src="https://www.arkademy.com/img/logo%20arkademy-01.9c1222ba.png" height="28" alt="CoolBrand">
+      </a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav">
+            <a><h3> ARKADEMY BOOTCAMP </h3> </a>
+          </div>
+      </div>
+
+  </nav>
+    {% block content %}
+<div class="container">
+    <!-- Button to Open the Modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+  Add
+  </button>
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Add Data</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form action="/add" method="POST">
+          <div class="form-group">
+            <input class="form-control" type="text" name="Name" placeholder="Name .." required>
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="text" name="Work" placeholder="Work .." required>
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="text" name="Salary" placeholder="Salary .." required>
+          </div>
+          <input type="submit" value="Add" class="btn btn-primary">
+          </form>
+
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+  </div>
+    <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Work</th>
+        <th scope="col">Salary</th>
+        <th scope="col"> Action </th>
+      </tr>
+    </thead>
+{% for item in data %}
+    <tr>
+      <td>{{item['Name']}}</td>
+      <td>{{item['Work']}}</td>
+      <td>{{item['Salary']}}</td>
+      <td>
+        <form action="/delete" method="POST">
+          <div class="form-group">
+            <input class="form-control" type="hidden" name="ID" value="{{item['ID']}}">
+            <input class="form-control" type="hidden" name="Name" value="{{item['Name']}}">
+          </div>
+          <input type="submit" value="Hapus" class="btn btn-primary">
+          </form>
+        </td>
+      <td>  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal{{item['ID']}}">
+        Edit
+        </button>
+
+        <!-- The Modal -->
+        <div class="modal" id="myModal{{item['ID']}}">
+        <div class="modal-dialog">
+          <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Edit Data</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+              <form action="/edit" method="POST">
+                <div class="form-group">
+                  <input class="form-control" type="text" name="Name" value="{{item['Name']}}" required>
+                  <input class="form-control" type="hidden" name="ID" value="{{item['ID']}}">
+                </div>
+                <div class="form-group">
+                  <input class="form-control" type="text" name="Work" value="{{item['Work']}}" required>
+                </div>
+                <div class="form-group">
+                  <input class="form-control" type="text" name="Salary" value="{{item['Salary']}}" required>
+                </div>
+                <input type="submit" value="Edit" class="btn btn-primary">
+                </form>
+
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+          </div>
+        </div>
+        </div>
+</td>
+
+      </tr>
+{% endfor %}
+{% endblock %}
+</div>
+  </body>
