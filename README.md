@@ -37,7 +37,7 @@ nama direktori : soal6 <br />
 keterangan : <br />
 Menggunakan Framework Flask Python, Install terlebih dahulu python3. 
 Lalu install library yang dibutuhkan menggunakan perintah didalam direktori Soal6 : <br />
-<b>pip install -r requirements.txt</b>
+<b>pip install -r requirements.txt</b> <br />
 Lalu jalankan perintah berikut untuk inisiasi flask (jalankan didalam direktori Soal6) : <br />
 untuk windows cmd : <br />
 set FLASK_APP=script.py <br />
@@ -47,7 +47,10 @@ flask run
 untuk unix / macos / linix : <br />
 export FLASK_APP=script.py <br />
 jalakan flask dengan perintah berikut : <br />
-flask run / run flask 
+flask run / run flask <br />
+
+Untuk edit / add data gunakan Id salary dan Id Work. <br />
+Karena saya belum bisa menggunakan String dari Id Salary / Work dengan memanfaatkan Mysql. Saya bingung.<br />
 ![screen shoot](screenshoot/screenshootarkademy1.png)
 ![screen shoot](screenshoot/screenshootarkademy2.png)
 ![screen shoot](screenshoot/screenshootarkademy3.png)
