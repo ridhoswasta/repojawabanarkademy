@@ -31,3 +31,5 @@ nama file : soal5.py<br/>
 keterangan : <br/>
 bahasa pemrograman menggunakan python3 <br/>
 tidak ada library python yang digunakan, hanya menggunakan fungsi bawaan python.<br/>
+
+![screen shoot](http://prntscr.com/p31gfm)
