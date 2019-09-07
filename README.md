@@ -36,7 +36,7 @@ tidak ada library python yang digunakan, hanya menggunakan fungsi bawaan python.
 nama direktori : soal6 <br />
 keterangan : <br />
 Menggunakan Framework Flask Python, Install terlebih dahulu python3. 
-Lalu install library yang dibutuhkan menggunakan perintah didalam direktori Soal6 : <br / >
+Lalu install library yang dibutuhkan menggunakan perintah didalam direktori Soal6 : <br />
 <b>pip install -r requirements.txt</b>
 Lalu jalankan perintah berikut untuk inisiasi flask (jalankan didalam direktori Soal6) : <br />
 untuk windows cmd : <br />
